@@ -5,7 +5,7 @@
     <title>登录页</title>
 </head>
 <body>
-<p>请登录</p>
+<p style="text-align: center">请登录</p>
 <form action="${pageContext.request.contextPath}/login" method="post">
     <label for="username">
         用户名：<input id="username" name="username" type="text" required>

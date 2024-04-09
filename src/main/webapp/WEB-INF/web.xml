@@ -11,4 +11,49 @@
         <servlet-name>login</servlet-name>
         <url-pattern>/login</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ToUpdateBookServlet</servlet-name>
+        <servlet-class>com.sks.servlet.ToUpdateBookServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ToUpdateBookServlet</servlet-name>
+        <url-pattern>/toUpdateBook</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>updateBook</servlet-name>
+        <servlet-class>com.sks.servlet.UpdateBookServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>updateBook</servlet-name>
+        <url-pattern>/updateBook</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>deleteBook</servlet-name>
+        <servlet-class>com.sks.servlet.DeleteBookServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>deleteBook</servlet-name>
+        <url-pattern>/deleteBook</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>toAddBook</servlet-name>
+        <servlet-class>com.sks.servlet.ToAddBookServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>toAddBook</servlet-name>
+        <url-pattern>/toAddBook</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>addBook</servlet-name>
+        <servlet-class>com.sks.servlet.AddBookServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>addBook</servlet-name>
+        <url-pattern>/addBook</url-pattern>
+    </servlet-mapping>
 </web-app>

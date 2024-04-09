@@ -8,19 +8,24 @@
         h3 {
             color: red;
         }
+
         .myTable {
             background: pink;
             table-layout: fixed;
             width: 100%;
         }
+
         .tableHead {
             background: skyblue;
         }
     </style>
 </head>
 <body>
-<h3>欢迎您，<%=request.getSession().getAttribute("username")%></h3>
-<button class="btn btn-primary">呵呵</button>
+<h3>欢迎您，<%=request.getSession().getAttribute("username")%>
+</h3>
+<a href="${pageContext.request.contextPath}/toAddBook">
+    <button class="btn btn-success">新增</button>
+</a>
 <table class="myTable">
     <tr class="tableHead">
         <td>id</td>
@@ -34,8 +39,12 @@
             <td>${item.name}</td>
             <td>${item.author}</td>
             <td>
-                <button type="button" class="btn btn-primary">修改</button>
-                <button class="btn btn-danger">删除</button>
+                <a href="${pageContext.request.contextPath}/toUpdateBook?bookId=${item.id}">
+                    <button type="button" class="btn btn-primary btn-sm">修改</button>
+                </a>
+                <a href="${pageContext.request.contextPath}/deleteBook?bookId=${item.id}">
+                    <button class="btn btn-danger btn-sm">删除</button>
+                </a>
             </td>
         </tr>
     </c:forEach>
