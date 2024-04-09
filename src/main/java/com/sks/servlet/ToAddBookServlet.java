@@ -1,5 +1,6 @@
 package com.sks.servlet;
 
+import com.sks.constant.JspNameConstant;
 import com.sks.util.PathUtil;
 
 import javax.servlet.ServletException;
@@ -11,6 +12,6 @@ import java.io.IOException;
 public class ToAddBookServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getRequestDispatcher(PathUtil.getPath("addBook")).forward(req, resp);
+        req.getRequestDispatcher(PathUtil.getPath(JspNameConstant.ADD_BOOK)).forward(req, resp);
     }
 }

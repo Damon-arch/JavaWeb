@@ -1,5 +1,6 @@
 package com.sks.servlet;
 
+import com.sks.constant.JspNameConstant;
 import com.sks.dao.BookDao;
 import com.sks.dao.BookDaoImpl;
 import com.sks.entity.Book;
@@ -24,6 +25,6 @@ public class ToUpdateBookServlet extends HttpServlet {
             throw new RuntimeException(e);
         }
         req.setAttribute("book", book);
-        req.getRequestDispatcher(PathUtil.getPath("updateBook")).forward(req, resp);
+        req.getRequestDispatcher(PathUtil.getPath(JspNameConstant.UPDATE_BOOK)).forward(req, resp);
     }
 }

@@ -11,6 +11,7 @@ import java.sql.SQLException;
 
 public class JDBCUtil {
     private static final Logger logger = LogManager.getLogger(JDBCUtil.class);
+
     // 数据库连接信息
     private static final String JDBC_URL = "jdbc:mysql://localhost:3306/javaweb";
     private static final String USERNAME = "root";
