@@ -23,6 +23,10 @@
 <body>
 <h3>欢迎您，<%=request.getSession().getAttribute("username")%>
 </h3>
+<select onchange="toUser()">
+    <option selected>书籍管理</option>
+    <option>用户管理</option>
+</select>
 <a href="${pageContext.request.contextPath}/toAddBook">
     <button class="btn btn-success">新增</button>
 </a>
@@ -49,6 +53,10 @@
         </tr>
     </c:forEach>
 </table>
-<hr>
+<script>
+    function toUser() {
+        window.location.href = "http://localhost:8080/JavaWeb/app/userList";
+    }
+</script>
 </body>
 </html>
