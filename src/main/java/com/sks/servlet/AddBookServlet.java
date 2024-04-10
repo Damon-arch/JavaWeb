@@ -1,10 +1,10 @@
 package com.sks.servlet;
 
-import com.sks.constant.ExceptionMsgConstant;
 import com.sks.dao.BookDao;
-import com.sks.dao.BookDaoImpl;
 import com.sks.entity.Book;
 import com.sks.util.ServletUtil;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -17,7 +17,8 @@ public class AddBookServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String name = req.getParameter("name");
         String author = req.getParameter("author");
-        BookDao bookDao = new BookDaoImpl();
+        ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+        BookDao bookDao = context.getBean("bookDao", BookDao.class);
         Book book = new Book();
         book.setName(name);
         book.setAuthor(author);
@@ -25,7 +26,7 @@ public class AddBookServlet extends HttpServlet {
         if (i > 0) {
             ServletUtil.selectAfterUpdate(req, resp, bookDao);
         } else {
-            throw new RuntimeException(ExceptionMsgConstant.ADD_BOOK_FAIL);
+            throw new RuntimeException("添加书籍失败");
         }
     }
 }
